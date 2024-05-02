@@ -21,11 +21,14 @@ while True:
                 print("Since dealers sum of cards is less than 17, Dealer must take another card.")
                 dealer.append(random.choice(cards))
                 if (dealer[0]+dealer[1]+dealer[2]) > 21 and 11 in dealer:
-                    for i in range(len(dealer)):
-                        if dealer[i] == 11:
-                            dealer[i] = 1
-                            if (dealer[0]+dealer[1]+dealer[2]) < 21:
-                                pass
+                    while True:
+                        for i in range(len(dealer)):
+                            if dealer[i] == 11:
+                                dealer[i] = 1
+                                if (dealer[0]+dealer[1]+dealer[2]) < 21:
+                                    break
+                                else:
+                                    pass
                 elif (dealer[0]+dealer[1]+dealer[2]) > 21 and 11 not in dealer:
                     print(f"\nDealers hand: [{dealer[0]}, {dealer[1]}, {dealer[2]}]\nTotal = {dealer[0]+dealer[1]+dealer[2]}\n\nPlayers hand: [{player[0]}, {player[1]}]\nTotal = {player[0]+player[1]}\n")
             else:
