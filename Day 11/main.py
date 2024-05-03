@@ -49,18 +49,18 @@ def check_dealer():
 
 
 while True:
-    start = input("Do you want to play a game of Blackjack?: ").lower()
+    start = input("\nDo you want to play a game of Blackjack?: ").lower()
     if start == "no" or start == "n":
         break
     elif start == "yes" or start == "y":
         give_initial_decks()
-        print(f"Dealer: [{dealer[0]}, ##]\nTotal = {dealer[0]}\n\nPlayer: [{player[0]}, {player[1]}]\nTotal = {calculate_score(player)}")
+        print(f"\nDealer: [{dealer[0]}, ##]\nTotal = {dealer[0]}\n\nPlayer: [{player[0]}, {player[1]}]\nTotal = {calculate_score(player)}\n")
         draw_card = input("Do you want to draw another card?: ").lower()
         if draw_card == "no" or draw_card == "n":
             check_dealer()
             if calculate_score(player) > 21:
                 check_ace(player)
-            print(f"Dealer: {dealer}\nTotal = {calculate_score(dealer)}\n\nPlayer: [{player[0]}, {player[1]}]\nTotal = {calculate_score(player)}")
+            print(f"\nDealer: {dealer}\nTotal = {calculate_score(dealer)}\n\nPlayer: [{player[0]}, {player[1]}]\nTotal = {calculate_score(player)}\n")
             check_win(player, dealer)
             player.clear()
             dealer.clear()
@@ -70,10 +70,7 @@ while True:
                 check_ace(player)
             if calculate_score(dealer) > 21:
                 check_ace(dealer)
-            print(f"Dealer: {dealer}\nTotal = {calculate_score(dealer)}\n\nPlayer: [{player}]\nTotal = {calculate_score(player)}")
-            check_win()
-
-
-
-
-
+            print(f"\nDealer: {dealer}\nTotal = {calculate_score(dealer)}\n\nPlayer: {player}\nTotal = {calculate_score(player)}\n")
+            check_win(player, dealer)
+            player.clear()
+            dealer.clear()
