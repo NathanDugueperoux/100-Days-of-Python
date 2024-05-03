@@ -1,0 +1,8 @@
+give decks
+asks if you want more cards
+if yes:
+give player card
+check if dealer > 17
+if decks > 21 check for aces
+
+
