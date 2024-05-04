@@ -1,6 +1,6 @@
 import random
 
-cards = [11, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
+cards = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
 dealer = []
 player = []
 
@@ -65,11 +65,10 @@ while True:
             player.clear()
             dealer.clear()
         elif draw_card == "yes" or draw_card == "y":
+            check_dealer()
             player.append(random.choice(cards))
             if calculate_score(player) > 21:
                 check_ace(player)
-            if calculate_score(dealer) > 21:
-                check_ace(dealer)
             print(f"\nDealer: {dealer}\nTotal = {calculate_score(dealer)}\n\nPlayer: {player}\nTotal = {calculate_score(player)}\n")
             check_win(player, dealer)
             player.clear()
