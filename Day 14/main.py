@@ -36,8 +36,14 @@ print(f"High score: {content}")
 while True:
     if find_followers(players)[0] > find_followers(players)[1]:
         players[1] = random.choice(data)
+        if players[0] == players[1]:
+            while players[0] == players[1]:
+                players[1] = random.choice(data)
     else:
         players[0] = random.choice(data)
+        if players[0] == players[1]:
+            while players[0] == players[1]:
+                players[0] = random.choice(data)
     print("-----------------------------------------------------------------------")
     print(f"Option A: {players[0]["name"]}, {players[0]["description"]}, {players[0]["country"]}")
     print("\nvs\n")
